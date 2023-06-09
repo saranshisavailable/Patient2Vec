@@ -1,8 +1,15 @@
 Patient2Vec : A Personalized Interpretable Deep Representation of the Longitudinal Electronic Health Record
 The availability of large amount of Electronic health data can allow us to develop neural networks that can predict the outcome of hospitalisation or a disease based on the medical history of a patient. Patient2Vec aims at developing a personalized interpretable deep representation of the logitudinal health reecord. Longitudinal data resembles text documents so, deep neural networks can be applied to extract meaningful information from the data. Neural networks mimic neurons and the ability of brain to think and make decisions. Feed forward neural network has a problem of memory, it generates an output after processing the input from a hidden layer. So it does not have the ability to process sequential information which is inherent to human language. This problem is solved by Recurrent Neural Networks, which take a hidden state also as an input at each timestep. Now, two types of RNNs have been discussed in the paper namely GRU (gated recurrent unit) and LSTM(Long short term memory)
 'Patient2Vec' is a self-aware framework for representation learning that inherits from the 'torch.nn' Module. It includes a recurrent autoencoder with an encoder, a convolutional embedding layer, a recurrent module, and a decoder. Notably, a linear layer with shared weights follows each decoding step. Due to this design, the framework can automatically isolate the most crucial elements of the incoming data, extract valuable characteristics, and produce effective representations.
-
 'init', 'init_weights', 'convolutional_layer', 'encode_rnn', 'add_beta_attention', 'forward', and 'get_loss' are the six methods that are included in this code.
- 
+ The model's structure is initialised via the 'init' function, which calls for 13 parameters including input size, hidden size, layer count, attention dimension, and initialization range. The model's layers, size, and sequence length are all defined by these parameters.
+The 'init_weights' function is used to initialise the model's weights using uniform random values that fall within the given range. 
+The 'convolutional_layer' function is used to apply the convolutional (shape that is folded in curves) operations defined in the technique to the input data. Additionally,'self.func_tanh' is used as an activation function, and the output is then returned.
+
+
+
+
+
+
 
 
